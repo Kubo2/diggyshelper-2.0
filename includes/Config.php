@@ -25,6 +25,7 @@ final class Config {
 	 */
 	private $sections = array(
 		"db",
+		"stats",
 	);
 
 	/**
@@ -37,6 +38,15 @@ final class Config {
 		"database" => "test",
 		"login" => "root",
 		"password" => "root",
+	);
+
+	/**
+	 * Stats data.
+	 *
+	 * @var array
+	 */
+	private $stats = array(
+		"activity.max_users" => 40,
 	);
 
 	/**
