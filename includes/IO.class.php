@@ -4,11 +4,11 @@
  * Input/Output. Represents VIEW part of project.
  * 
  * @access public
- * @static
+ * @abstract 
  * @package DiggysHelper
  */
 
-final class IO implements ArrayAccess, Iterator {
+abstract class IO implements ArrayAccess, Iterator {
 	/**
 	 * Buffer for storing output templates.
 	 *
@@ -23,7 +23,7 @@ final class IO implements ArrayAccess, Iterator {
 	 * @throws StaticClassException
 	 */
 	function __construct() {
-		throw new ClassException(__CLASS__ . "is *static* class - can not be instantiated.", ClassException::ClassUtility);
+		throw new ClassException(__CLASS__ . "is static class. You can not instantiate it.", ClassException::ClassUtility);
 	}
 
 	/**
