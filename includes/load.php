@@ -39,12 +39,14 @@ set_include_path(".");
 
 function __autoload($className) {
 	if(!error_reporting() || !(int)ini_get('error_reporting')) {
-		(1 === include(PROJECT_LOCATION . "/includes/$className.class.php")) 
-		|| (1 === include(PROJECT_LOCATION . "/includes/$className.inc.php")) 
+		(1 === include(PROJECT_LOCATION . "/includes/$className.class.php"))
+		|| (1 === include(PROJECT_LOCATION . "/includes/$className.inc.php"))
+		|| (1 === include(PROJECT_LOCATION . "/includes/traits/$className.php"))
 		|| (require(PROJECT_LOCATION . "/includes/$className.php"));
 	} else {
-		(1 === @include(PROJECT_LOCATION . "/includes/$className.class.php")) 
-		|| (1 === @include(PROJECT_LOCATION . "/includes/$className.inc.php")) 
+		(1 === @include(PROJECT_LOCATION . "/includes/$className.class.php"))
+		|| (1 === @include(PROJECT_LOCATION . "/includes/$className.inc.php"))
+		|| (1 === @include(PROJECT_LOCATION . "/includes/traits/$className.php"))
 		|| (require(PROJECT_LOCATION . "/includes/$className.php"));
 	}
 }

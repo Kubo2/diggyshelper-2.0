@@ -23,7 +23,7 @@ abstract class IO implements ArrayAccess, Iterator {
 	 * @throws StaticClassException
 	 */
 	function __construct() {
-		throw new ClassException(__CLASS__ . "is static class. You can not instantiate it.", ClassException::ClassUtility);
+		throw new ClassException(__CLASS__ . "is abstract class. You can not instantiate it.", ClassException::AbstractClass);
 	}
 
 	/**

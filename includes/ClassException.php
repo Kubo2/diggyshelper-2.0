@@ -14,6 +14,7 @@ class ClassException extends Exception {
 	
 	const Singleton = 1.8e1;
 	const ClassUtility =  1.8e2;
+	const AbstractClass = 1.8e3;
 
 	const UndeclaredMethod = 1.9e1;
 
