@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Input/Output. Represents VIEW part of project.
+ * Input/Output.
  * 
  * @access public
  * @abstract 
@@ -14,17 +14,7 @@ abstract class IO implements ArrayAccess, Iterator {
 	 *
 	 * @var Array of strings
 	 */
-	private static $buffer = array();
-
-	/**
-	 * Constructor throws StaticClassException, to let user see,
-	 * that he/she can not instantiate static class.
-	 *
-	 * @throws StaticClassException
-	 */
-	function __construct() {
-		throw new ClassException(__CLASS__ . "is abstract class. You can not instantiate it.", ClassException::AbstractClass);
-	}
+	protected static $buffer = array();
 
 	/**
 	 * ArrayAccess::offsetExists()
@@ -32,14 +22,14 @@ abstract class IO implements ArrayAccess, Iterator {
 	 * @param mixed $offset
 	 * @return bool
 	 */
-	public function offsetExists($offset) { }
+	abstract public function offsetExists($offset);
 
 	/**
 	 * ArrayAccess::offsetUnset()
 	 *
 	 * @param mixed $offset
 	 */
-	public function offsetUnset($offset) { }
+	abstract public function offsetUnset($offset);
 
 	/**
 	 * ArrayAccess::offsetGet()
@@ -47,7 +37,7 @@ abstract class IO implements ArrayAccess, Iterator {
 	 * @param mixed $offset
 	 * @return mixed
 	 */
-	public function offsetGet($offset) { }
+	abstract public function offsetGet($offset);
 
 	/**
 	 * ArrayAccess::offsetSet()
@@ -55,7 +45,7 @@ abstract class IO implements ArrayAccess, Iterator {
 	 * @param mixed
 	 * @param mixed
 	 */
-	public function offsetSet($name, $value) { }
+	abstract public function offsetSet($name, $value);
 
 	/**
 	 * Iterator::rewind()
@@ -63,7 +53,7 @@ abstract class IO implements ArrayAccess, Iterator {
 	 *
 	 * @return void
 	 */
-	public function rewind() { }
+	abstract public function rewind();
 	
 	/**
 	 * Iterator::current()
@@ -71,7 +61,7 @@ abstract class IO implements ArrayAccess, Iterator {
 	 *
 	 * @return mixed
 	 */
-	public function current() { }
+	abstract public function current();
 
     /**
      * Iterator::key()
@@ -79,7 +69,7 @@ abstract class IO implements ArrayAccess, Iterator {
      *
      * @return mixed
      */
-    public function key() { }
+    abstract public function key();
 
     /**
      * Iterator::next()
@@ -87,7 +77,7 @@ abstract class IO implements ArrayAccess, Iterator {
      *
      * @return void
      */
-    public function next() { }
+    abstract public function next();
 
     /**
      * Iterator::valid()
@@ -95,5 +85,5 @@ abstract class IO implements ArrayAccess, Iterator {
      *
      * @return boolean
      */
-    public function valid() { }
+    abstract public function valid();
 }
