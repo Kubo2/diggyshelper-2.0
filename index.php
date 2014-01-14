@@ -11,4 +11,4 @@
  */
 
 
-include("./includes/load.php");
+require "./includes/load.php";
