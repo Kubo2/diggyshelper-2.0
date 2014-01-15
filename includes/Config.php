@@ -11,30 +11,6 @@
 
 final class Config {
 	/**
-	 * Constant containing absolute path to our project/app directory IN LOCAL FILESYSTEM.
-	 *
-	 * @var string
-	 */
-	const ProjectLocation = defined("__DIR__") ? dirname(__DIR__) : dirname(dirname(__FILE__));
-
-	/**
-	 * Constant containing relative web URL of our project.
-	 *
-	 * @var string
-	 */
-	const ProjectUrl = dirname($_SERVER["PHP_SELF"]) . '/';
-
-	/**
-	 * Constant containing absoulute web URI to our project's LOCATION (with http:// prefix).
-	 *
-	 * @var string
-	 */
-	const ProjectUri = 'http://'
-		. (!empty($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : $_SERVER["SERVER_NAME"])
-		. (preg_replace("~/public/.*$~", '', dirname($_SERVER["PHP_SELF"])))
-		. '/';
-
-	/**
 	 * Single instance of this class.
 	 *
 	 * @var object Config
