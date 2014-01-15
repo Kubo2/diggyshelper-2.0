@@ -6,6 +6,9 @@
  * @package DiggysHelper
  */
 
+// sets default encoding when using mb_* functions
+mb_internal_encoding("UTF-8");
+
 // Prevents from searching for files in more directories
 set_include_path(".");
 
