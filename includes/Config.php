@@ -25,7 +25,7 @@ final class Config {
 	 */
 	private $sections = array(
 		"db",
-		"stats",
+		"administrator",
 	);
 
 	/**
@@ -41,12 +41,13 @@ final class Config {
 	);
 
 	/**
-	 * Stats data.
+	 * Main administrator data.
 	 *
 	 * @var array
 	 */
-	private $stats = array(
-		"activity.max_users" => 40,
+	private $administrator = array(
+		"user.id" => 1,
+		"user.name" => "admin",
 	);
 
 	/**
