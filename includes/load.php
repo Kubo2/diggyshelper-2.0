@@ -20,6 +20,27 @@ set_include_path(".");
 define('PROJECT_LOCATION', defined("__DIR__") ? dirname(__DIR__) : dirname(dirname(__FILE__)));
 
 /**
+ * Constant containing relative web URL of our project.
+ *
+ * @var string
+ */
+define('PROJECT_URL', rtrim(dirname($_SERVER["PHP_SELF"]), DIRECTORY_SEPARATOR) . '/');
+
+/**
+ * Constant containing absoulute web URI to our project's LOCATION (with http:// prefix).
+ *
+ * @var string
+ */
+define('PROJECT_URI',
+	'http'
+	. (isset($_SERVER["HTTPS"]) && strtoupper($_SERVER["HTTPS"]) != "OFF" ? 's' : '')
+	. '://'
+	. (!empty($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : $_SERVER["SERVER_NAME"])
+	. rtrim(preg_replace("~/public/.*$~", '', dirname($_SERVER["PHP_SELF"])), DIRECTORY_SEPARATOR)
+	. '/'
+);
+
+/**
  * Autoload function.
  * 
  * @param string class name
