@@ -3,5 +3,5 @@ desktop.ini
 _.php
 
 # composer files&folders
-composer.lock
+#composer.lock
 vendor/
