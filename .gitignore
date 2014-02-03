@@ -1,3 +1,7 @@
+# helping files
 desktop.ini
 _.php
+
+# composer files&folders
+composer.lock
 vendor/
