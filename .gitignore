@@ -5,3 +5,6 @@ _.php
 # composer files&folders
 #composer.lock
 vendor/
+
+# other hidden folders
+cache/
