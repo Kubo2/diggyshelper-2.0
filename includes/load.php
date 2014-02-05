@@ -40,6 +40,9 @@ define('PROJECT_URI',
 	. '/'
 );
 
+// this makes it possible to load vendor sources automatically
+require PROJECT_LOCATION . "/vendor/autoload.php";
+
 /**
  * Autoload function.
  * 
@@ -52,14 +55,16 @@ function __autoload($className) {
 		(1 === include(PROJECT_LOCATION . "/includes/$className.class.php"))
 		|| (1 === include(PROJECT_LOCATION . "/includes/$className.inc.php"))
 		|| (1 === include(PROJECT_LOCATION . "/includes/traits/$className.php"))
-		|| (require(PROJECT_LOCATION . "/includes/$className.php"));
+		|| (include(PROJECT_LOCATION . "/includes/$className.php"));
 	} else {
 		(1 === @include(PROJECT_LOCATION . "/includes/$className.class.php"))
 		|| (1 === @include(PROJECT_LOCATION . "/includes/$className.inc.php"))
 		|| (1 === @include(PROJECT_LOCATION . "/includes/traits/$className.php"))
-		|| (require(PROJECT_LOCATION . "/includes/$className.php"));
+		|| (@include(PROJECT_LOCATION . "/includes/$className.php"));
 	}
 }
+
+spl_autoload_register('__autoload');
 
 // includes configuration class
 // @since 2.0.0.1 will be included automatically by __autoload() implementation
