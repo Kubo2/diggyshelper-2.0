@@ -1,1 +1,21 @@
 Options -Indexes +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  #<IfDefine dev>
+    RewriteBase /karolina/WladinQ/diggyshelper-2.0/
+  #</IfDefine>
+  RewriteCond %{REQUEST_URI} !/(?:_\.php|public/.*|tools/.*)$
+  RewriteCond %{REQUEST_URI} !-f
+  RewriteCond %{REQUEST_URI} !-d
+  RewriteRule .* index.php [QSA,L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault A3
+  #<IfDefine !dev>
+    #ExpiresByType text/css M74995200
+  #</IfDefine>
+</IfModule>
+
