@@ -6,5 +6,8 @@ _.php
 #composer.lock
 vendor/
 
+# project design directory
+workspace/
+
 # other hidden folders
 cache/
