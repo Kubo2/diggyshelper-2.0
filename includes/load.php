@@ -51,15 +51,26 @@ require PROJECT_LOCATION . "/vendor/autoload.php";
  */
 
 function __autoload($className) {
+	// where to search in filesystem
 	static $paths = [ "%s.php", "controllers/%s.inc.php", "%s.class.php", "%s.inc.php", "traits/%s.php" ];
+	
+	if(class_exists($className))
+		// class already exists in current context
+		return;
+
+	// nothing found in context
 	foreach ($paths as $path) {
-		$fullPath = PROJECT_LOCATION . sprintf("/includes/$path", $className);
+		// loop over all paths
+		/*echo "\n", */$fullPath = PROJECT_LOCATION . sprintf("/includes/$path", $className);
 		if(file_exists($fullPath)) {
 			require $fullPath;
 			return;
 		}
 	}
-	throw new ClassNotFoundException;
+
+	// nothing found in filesystem
+	eval("class $className{}");
+	throw new ClassNotFoundException("Class wasn't found in global context and filesystem: $className");
 }
 
 spl_autoload_register('__autoload');
@@ -68,16 +79,8 @@ spl_autoload_register('__autoload');
  * Defines default implementation of ClassNotFoundException.
  * @access public
  */
-final class ClassNotFoundException extends ClassException {
+final class ClassNotFoundException extends NotFoundException {
 	// empty implementation
-}
-
-/**
- * Defines default (empty) implementation of InvalidMethodForControllerException.
- * @access public
- */
-final class InvalidMethodForControllerException extends Exception {
-
 }
 
 // includes configuration class

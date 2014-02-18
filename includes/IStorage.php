@@ -2,7 +2,7 @@
 
 /**
  * Represents all objects that serves as kind of storage.
- * Because of inheriting Iterator, can be interated as array type.
+ * Because of inheriting Iterator, can be iterated as array type.
  *
  * @package DiggysHelper
  */
