@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Options -Indexes +FollowSymLinks
 
 <IfModule mod_rewrite.c>
@@ -19,3 +20,24 @@ Options -Indexes +FollowSymLinks
   #</IfDefine>
 </IfModule>
 
+=======
+Options -Indexes +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} !localhost
+  RewriteRule .? - [E=FULLPATH:/,S=1]
+  RewriteRule .? - [E=FULLPATH:/karolina/WladinQ/diggyshelper-2.0/]
+  RewriteCond %{REQUEST_URI} !/(?:_\.php|public/.*|tools/.*)$
+  RewriteCond %{REQUEST_URI} !-f
+  RewriteCond %{REQUEST_URI} !-d
+  RewriteRule !index.php %{ENV:FULLPATH}/index.php [QSA,L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault A3
+  #ExpiresByType text/css M74995200
+</IfModule>
+
+>>>>>>> fb1f711ed7dafb95fbe664364a9e9562d57aeb5c
