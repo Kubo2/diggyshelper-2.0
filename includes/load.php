@@ -83,6 +83,3 @@ final class ClassNotFoundException extends NotFoundException {
 	// empty implementation
 }
 
-// includes configuration class
-// @since 2.0.0.1 will be included automatically by __autoload() implementation
-//require(PROJECT_LOCATION . "/includes/Config.php");
