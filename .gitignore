@@ -1,25 +1,12 @@
-<<<<<<< HEAD
 # helping files
 desktop.ini
 _.php
 
 # composer files&folders
-#composer.lock
-vendor/
-
-# other hidden folders
-=======
-# helping files
-desktop.ini
-_.php
-
-# composer files&folders
-#composer.lock
 vendor/
 
 # project design directory
 workspace/
 
 # other hidden folders
->>>>>>> fb1f711ed7dafb95fbe664364a9e9562d57aeb5c
 cache/
