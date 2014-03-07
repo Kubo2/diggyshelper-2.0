@@ -34,6 +34,7 @@ final class Config {
 	 * @var array
 	 */
 	private $db = array(
+		"driver" => "mysql",
 		"host" => "localhost",
 		"database" => "test",
 		"login" => "root",
