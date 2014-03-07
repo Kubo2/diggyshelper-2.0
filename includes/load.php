@@ -46,6 +46,7 @@ require PROJECT_LOCATION . "/vendor/autoload.php";
 /**
  * Autoload function.
  * 
+ * @todo Rewrite autoloading so it will respect namespaces.
  * @param string class name
  * @access public
  */
