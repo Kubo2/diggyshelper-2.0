@@ -1,6 +1,8 @@
 Diggy's Helper Project verzia 2
 ================================
 
+__This is now dead project.__
+
 Prvé moderované Česko-Slovenské fórum ku hre Diggy's Adventure.
 
 Todo
